@@ -1,9 +1,9 @@
 interface Props {
+  page?: number;
+  defaultPage?: number;
   count: number;
   boundaryCount: number;
   siblingCount: number;
-  page?: number;
-  defaultPage?: number;
 }
 
 export default (props: Props) => {

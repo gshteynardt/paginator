@@ -1,4 +1,3 @@
-$LIGHT_GREEN: #cbf558;
 $WHITE_05: rgba(0, 0, 0, .12);
 $BLUE_500: #79CAF2;
 $BLACK: #1a1a1a;
@@ -31,7 +30,7 @@ $BLACK: #1a1a1a;
       background-color: $BLUE_500;
     }
 
-    &_ellipsis{
+    &_ellipsis {
       cursor: default;
     }
   }

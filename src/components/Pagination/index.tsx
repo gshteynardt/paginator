@@ -1,5 +1,4 @@
 import { memo } from 'react';
-import cn from 'classnames';
 
 import './style.scss';
 import Button from './components/Button';
