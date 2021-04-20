@@ -20,7 +20,6 @@ export default (props: Props) => {
   };
 
   const startPages = range(1, Math.min(boundaryCount, count));
-
   const endPages = range(Math.max(count - boundaryCount + 1, boundaryCount + 1), count);
 
   const siblingsStart = Math.max(

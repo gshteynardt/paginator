@@ -1,5 +1,5 @@
-$WHITE_05: rgba(0, 0, 0, .12);
-$BLUE_500: #79CAF2;
+$WHITE_01: rgba(0, 0, 0, .12);
+$BLUE: #79CAF2;
 $BLACK: #1a1a1a;
 
 .Paginator {
@@ -26,11 +26,11 @@ $BLACK: #1a1a1a;
     cursor: pointer;
     
     &:hover:not(&_ellipsis) {
-      background-color: $WHITE_05;
+      background-color: $WHITE_01;
     }
     
     &_active {
-      background-color: $BLUE_500;
+      background-color: $BLUE;
     }
 
     &_ellipsis {

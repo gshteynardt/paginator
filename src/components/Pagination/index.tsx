@@ -17,7 +17,9 @@ const Paginator = (props: Props) => {
 
   return (
     <ul className="Paginator">
-      <Button onClick={onBack}><Arrow /></Button>
+      <Button onClick={onBack}>
+        <Arrow />
+      </Button>
       {items.map((item, index) => {
         const handleClick = () => typeof item === 'number'
           ? onClick(item)
