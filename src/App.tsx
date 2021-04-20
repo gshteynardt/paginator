@@ -13,7 +13,7 @@ function App() {
 
   const items = usePagination({
     count: COUNT,
-    boundaryCount: 2,
+    boundaryCount: 1,
     siblingCount: 1,
     defaultPage: 1,
     page: value,
