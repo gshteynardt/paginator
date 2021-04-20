@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+
 import './App.css';
+import Paginator from './components/Pagination';
+import usePagination from './hooks/usePaginator';
+
+const COUNT = 50;
 
 function App() {
+  const [value, setValue] = useState(1);
+  const handleClickOnPrevPage = () => setValue(value === 1 ? 1 : value - 1);
+  const handleClickOnNextPage = () => setValue(value === COUNT ? COUNT : value + 1);
+
+  const items = usePagination({
+    count: COUNT,
+    boundaryCount: 2,
+    siblingCount: 1,
+    defaultPage: 1,
+    page: value,
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Paginator
+        items={items}
+        onBack={handleClickOnPrevPage}
+        onNext={handleClickOnNextPage}
+        onClick={setValue}
+        page={value}
+      />
     </div>
   );
 }

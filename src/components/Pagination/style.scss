@@ -1,0 +1,50 @@
+$LIGHT_GREEN: #cbf558;
+$WHITE_05: rgba(0, 0, 0, .12);
+$BLUE_500: #79CAF2;
+$BLACK: #1a1a1a;
+
+.Paginator {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__Item {
+    min-height: 34px;
+    min-width: 34px;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    box-sizing: border-box;
+    padding: 0 3px;
+    margin: 0 3px;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+    
+    &:hover:not(&_ellipsis) {
+      background-color: $WHITE_05;
+    }
+    
+    &_active {
+      background-color: $BLUE_500;
+    }
+
+    &_ellipsis{
+      cursor: default;
+    }
+  }
+  
+  &__Label {
+    color: $BLACK;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__Arrow {
+    &_next {
+      transform: rotate(180deg);
+    }
+  }
+}
