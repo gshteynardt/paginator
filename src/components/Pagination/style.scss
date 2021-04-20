@@ -10,6 +10,9 @@ $BLACK: #1a1a1a;
   list-style: none;
 
   &__Item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     min-height: 34px;
     min-width: 34px;
     background-color: transparent;
