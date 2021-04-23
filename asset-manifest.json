@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/paginator/static/css/main.7a4a190c.chunk.css",
-    "main.js": "/paginator/static/js/main.6e667b0a.chunk.js",
-    "main.js.map": "/paginator/static/js/main.6e667b0a.chunk.js.map",
+    "main.css": "/paginator/static/css/main.09520e64.chunk.css",
+    "main.js": "/paginator/static/js/main.20fbee30.chunk.js",
+    "main.js.map": "/paginator/static/js/main.20fbee30.chunk.js.map",
     "runtime-main.js": "/paginator/static/js/runtime-main.2d3c3387.js",
     "runtime-main.js.map": "/paginator/static/js/runtime-main.2d3c3387.js.map",
-    "static/js/2.cc233905.chunk.js": "/paginator/static/js/2.cc233905.chunk.js",
-    "static/js/2.cc233905.chunk.js.map": "/paginator/static/js/2.cc233905.chunk.js.map",
+    "static/js/2.1c4e7401.chunk.js": "/paginator/static/js/2.1c4e7401.chunk.js",
+    "static/js/2.1c4e7401.chunk.js.map": "/paginator/static/js/2.1c4e7401.chunk.js.map",
     "static/js/3.149895d3.chunk.js": "/paginator/static/js/3.149895d3.chunk.js",
     "static/js/3.149895d3.chunk.js.map": "/paginator/static/js/3.149895d3.chunk.js.map",
     "index.html": "/paginator/index.html",
-    "static/css/main.7a4a190c.chunk.css.map": "/paginator/static/css/main.7a4a190c.chunk.css.map",
-    "static/js/2.cc233905.chunk.js.LICENSE.txt": "/paginator/static/js/2.cc233905.chunk.js.LICENSE.txt",
+    "static/css/main.09520e64.chunk.css.map": "/paginator/static/css/main.09520e64.chunk.css.map",
+    "static/js/2.1c4e7401.chunk.js.LICENSE.txt": "/paginator/static/js/2.1c4e7401.chunk.js.LICENSE.txt",
     "static/media/arrow-back-icon.3859aae6.svg": "/paginator/static/media/arrow-back-icon.3859aae6.svg",
     "static/media/arrow-last-item-icon.b841cb35.svg": "/paginator/static/media/arrow-last-item-icon.b841cb35.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.2d3c3387.js",
-    "static/js/2.cc233905.chunk.js",
-    "static/css/main.7a4a190c.chunk.css",
-    "static/js/main.6e667b0a.chunk.js"
+    "static/js/2.1c4e7401.chunk.js",
+    "static/css/main.09520e64.chunk.css",
+    "static/js/main.20fbee30.chunk.js"
   ]
 }
