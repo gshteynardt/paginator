@@ -53,7 +53,9 @@ $BLACK: #1a1a1a;
     }
 
     &_ellipsis {
-      cursor: default;
+      &:disabled {
+        color: $BLACK;
+      }
     }
   }
 
