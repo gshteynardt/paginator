@@ -8,26 +8,18 @@ const COUNT = 50;
 
 function App() {
   const [value, setValue] = useState(1);
-  const handleClickOnPrevPage = () => setValue(value === 1 ? 1 : value - 1);
-  const handleClickOnNextPage = () => setValue(value === COUNT ? COUNT : value + 1);
-
   const items = usePagination({
     count: COUNT,
     boundaryCount: 1,
     siblingCount: 1,
     defaultPage: 1,
     page: value,
+    onClick: setValue,
   });
 
   return (
     <div className="App">
-      <Paginator
-        items={items}
-        onBack={handleClickOnPrevPage}
-        onNext={handleClickOnNextPage}
-        onClick={setValue}
-        page={value}
-      />
+      <Paginator items={items}/>
     </div>
   );
 }

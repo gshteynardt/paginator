@@ -1,9 +1,14 @@
+import { SyntheticEvent } from 'react';
+
+import { iconsMap } from '../const';
+
 interface Props {
   page?: number;
   defaultPage?: number;
   count: number;
   boundaryCount: number;
   siblingCount: number;
+  onClick: (value: number) => void;
 }
 
 export default (props: Props) => {
@@ -12,6 +17,7 @@ export default (props: Props) => {
     boundaryCount,
     siblingCount,
     page = 1,
+    onClick,
   } = props;
   
   const range = (start: number, end: number) => {
@@ -45,6 +51,8 @@ export default (props: Props) => {
   );
 
   const items = [
+    ...['first'],
+    ...['previous'],
     ...startPages,
 
     // Start ellipsis
@@ -65,7 +73,54 @@ export default (props: Props) => {
         : []),
 
     ...endPages,
+    ...['next'],
+    ...['last'],
   ];
 
-  return items;
+  // Map the button type to its page number
+  const buttonPage = (type: string) => {
+    switch (type) {
+      case 'first':
+        return 1;
+      case 'previous':
+        return page - 1;
+      case 'next':
+        return page + 1;
+      case 'last':
+        return count;
+      default:
+        return 1;
+    }
+  };
+
+  const itemList = items.map(item => {
+    return typeof item === 'number'
+      ? {
+        onClick: (e?: SyntheticEvent) => {
+          onClick(item);
+        },
+        type: 'page',
+        page: item,
+        selected: item === page,
+      }
+      : {
+        onClick: (e?: SyntheticEvent) => {
+          onClick(buttonPage(item));
+        },
+        type: item,
+        page: buttonPage(item),
+        selected: false,
+        icon: (
+          item === 'first'
+          || item === 'previous'
+          || item === 'next'
+          || item === 'last'
+          )
+        ? iconsMap[item]
+        : null,
+        disabled: item.includes('ellipsis') || (item === 'previous' && page <= 1) || (item === 'next' && page >= count),
+      };
+  });
+
+  return itemList;
 };

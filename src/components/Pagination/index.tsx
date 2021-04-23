@@ -2,44 +2,30 @@ import { memo } from 'react';
 
 import './style.scss';
 import Button from './components/Button';
-import { Arrow } from '../../assets/icons';
+import { OptionsItem } from '../../types';
 
 interface Props {
-  items: (string | number)[];
-  page: number;
-  onClick: (value: number) => void;
-  onBack: () => void;
-  onNext: () => void;
+  items: OptionsItem[];
 }
 
 const Paginator = (props: Props) => {
-  const { items, page, onClick, onBack, onNext } = props;
-
+  const { items } = props;
   return (
     <ul className="Paginator">
-      <Button onClick={onBack}>
-        <Arrow />
-      </Button>
-      {items.map((item, index) => {
-        const handleClick = () => typeof item === 'number'
-          ? onClick(item)
-          : undefined;
-
-        return (
+      {items.map(({ type, page, selected, icon, onClick, disabled }, index) => (
           <li key={index}>
             <Button
-              active={page === item}
-              ellipsis={typeof item !== 'number'}
-              onClick={handleClick}
+              onClick={onClick}
+              active={selected}
+              ellipsis={type.includes('ellipsis')}
+              disabled={disabled}
             >
-              {typeof item === 'number' ? item : '...'}
+              {type === 'page' && page}
+              {type.includes('ellipsis') && '...'}
+              {icon && icon}
             </Button>
           </li>
-        );
-      })}
-      <Button onClick={onNext}>
-        <Arrow className="Paginator__Arrow Paginator__Arrow_next" />
-      </Button>
+        ))}
     </ul>
   );
 };
