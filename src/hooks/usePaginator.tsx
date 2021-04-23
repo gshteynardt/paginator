@@ -118,7 +118,9 @@ export default (props: Props) => {
           )
         ? iconsMap[item]
         : null,
-        disabled: item.includes('ellipsis') || (item === 'previous' && page <= 1) || (item === 'next' && page >= count),
+        disabled: item.includes('ellipsis')
+        || (item === 'previous' && page <= 1)
+        || (item === 'next' && page >= count),
       };
   });
 
