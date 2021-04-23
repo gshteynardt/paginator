@@ -1,5 +1,6 @@
-$WHITE_01: rgba(0, 0, 0, .12);
-$BLUE: #79CAF2;
+$WHITE_01: rgba(0, 0, 0, 0.12);
+$GRAY_500: #9d9fa3;
+$BLUE: #79caf2;
 $BLACK: #1a1a1a;
 
 .Paginator {
@@ -24,11 +25,29 @@ $BLACK: #1a1a1a;
     margin: 0 3px;
     transition: all 0.15s ease-in-out;
     cursor: pointer;
-    
+
     &:hover:not(&_ellipsis) {
       background-color: $WHITE_01;
     }
-    
+
+    &:disabled {
+      cursor: default;
+
+      .Paginator__Arrow {
+        &_last {
+          path {
+            fill: $GRAY_500;
+          }
+        }
+
+        &_back {
+          path {
+            stroke: $GRAY_500;
+          }
+        }
+      }
+    }
+
     &_active {
       background-color: $BLUE;
     }
@@ -37,7 +56,7 @@ $BLACK: #1a1a1a;
       cursor: default;
     }
   }
-  
+
   &__Label {
     color: $BLACK;
     font-size: 14px;
